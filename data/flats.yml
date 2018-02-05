@@ -1,0 +1,31 @@
+kahoza:
+  name: "Karen's house"
+  description: "Bright apartment near Mauerpark"
+  city_name: "Berlin, Germany"
+  city_slug: "Berlin"
+  wifi: true
+  rating: 4
+
+lorenevignaud:
+  name: "Lorene Vignaud"
+  description: "Cosy studio in Paris"
+  city_name: "Paris, France"
+  city_slug: "paris"
+  wifi: true
+  rating: 3
+
+ssaunier:
+  name: "Sebastian Saunier"
+  description: "Cosy apartment in Brussels"
+  city_name: "Brussels, Belgium"
+  city_slug: "brussels"
+  wifi: true
+  rating: 3
+
+Papillard:
+  name: "Boris Paillard"
+  description: "Cute studio in Rio"
+  city_name: "Rio, Brasil"
+  city_slug: "rio"
+  wifi: true
+  rating: 1

@@ -1,56 +1,69 @@
 ---
 title: Le Wagon - Middleman
 ---
-
-<!-- <div id="home">
-  <div class="home-content">
-    <%= image_tag "logo.png", width: "200" %>
-    <p>
-      Middleman is now running!
-    </p>
-    <p class="about">
-      <%= link_to "More about this template", "about.html" %>
-    </p>
-  </div>
-</div> -->
-
+<!-- banner -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.7) 0%, rgba(0,36,61,0.7) 50%), url('http://images.all-free-download.com/images/graphiclarge/travel_background_concept_6815657.jpg');">
   <div class="banner-content">
     <h1>Find your accommodation around the world</h1>
     <p>Stay in the heart of the city!</p>
-    <a class="btn btn-primary btn-lg">Take me there</a>
-    </div>
+    <a class="btn btn-primary btn-lg" href="http://localhost:4567/flats.html" target="_blank">Take me there</a>
   </div>
+</div>
 
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-    <div class="card-category">Popular</div>
-    <div class="card-description">
-      <h2>Shanghai</h2>
-      <p>Very cool city</p>
-    </div>
-    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/random">
-    <a class="card-link" href="#" ></a>
-  </div>
 
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/barcelona');">
-    <div class="card-category">Popular</div>
-    <div class="card-description">
-      <h2>Barcelona</h2>
-      <p>Discover Gaudi</p>
+<!-- dinamic using yml -->
+<div class="container" id="home-flats">
+  <h2 class="text-center">Popular flats</h2>
+  <div class="row">
+    <% data.flats.each do |owner, flat| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+        <div class="card-category"><%= flat.city_name %></div>
+        <div class="card-description">
+          <h3><%= flat.name %></h3>
+          <p><%= flat.description %></p>
+        </div>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class:"card-user" %>
+        <%= link_to "", "flats/#{owner}.html", class: "card-link" %>
+      </div>
     </div>
-    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/random">
-    <a class="card-link" href="#" ></a>
+    <% end %>
   </div>
+</div>
 
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/rio');">
-    <div class="card-category">Popular</div>
-    <div class="card-description">
-      <h2>Le Wagon Rio</h2>
-      <p>Enjoy their festivals</p>
-    </div>
-    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/saunier">
-    <a class="card-link" href="#" ></a>
+
+<!-- card number 1 -->
+<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Shanghai</h2>
+    <p>Very cool city</p>
   </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/random">
+  <a class="card-link" href="#" ></a>
+</div>
+ -->
+<!-- card number 2 -->
+<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/barcelona');">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Barcelona</h2>
+    <p>Discover Gaudi</p>
+  </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/random">
+  <a class="card-link" href="#" ></a>
+</div> -->
+
+<!-- card number 3-->
+<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/rio');">
+  <div class="card-category">Popular</div>
+  <div class="card-description">
+    <h2>Le Wagon Rio</h2>
+    <p>Enjoy their festivals</p>
+  </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/saunier">
+  <a class="card-link" href="#" ></a>
+</div> -->
 
 
 
